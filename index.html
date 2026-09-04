@@ -1,158 +1,232 @@
-<!DOCTYPE html>
+<!<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mundo do Futebol</title>
+    <title>EuroFut - Futebol Europeu</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="dark-theme">
 
     <header>
-        <h1>Mundo do Futebol</h1>
+        <div class="logo">
+            <h1>EURO<span>FUT</span></h1>
+        </div>
         <nav>
             <ul>
-                <li><a href="#noticias">Notícias</a></li>
-                <li><a href="#tabela">Tabela</a></li>
-                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#champions">Champions League</a></li>
+                <li><a href="#ligas">Ligas</a></li>
+                <li><a href="#transferencias">Mercado</a></li>
             </ul>
         </nav>
+        <button id="theme-toggle" class="btn-theme">☀️ Tema Claro</button>
     </header>
 
+    <div class="hero">
+        <div class="hero-content">
+            <h2>Acompanhe o Futebol Europeu</h2>
+            <p>Notícias, análises táticas e cobertura completa dos maiores clubes do planeta.</p>
+            <a href="#champions" class="btn-primary">Ver Notícias</a>
+        </div>
+    </div>
+
     <main>
-        <section id="destaque">
-            <h2>Destaque da Rodada</h2>
-            <article class="card">
-                <h3>Grande Final se Aproxima!</h3>
-                <p>Confira a análise tática dos times que disputarão o título neste fim de semana.</p>
+        <section id="champions">
+            <h2>UEFA Champions League</h2>
+            <article class="card destaque">
+                <img src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?q=80&w=800" alt="Estádio de Futebol">
+                <div class="card-body">
+                    <span class="badge">Destaque</span>
+                    <h3>Análise Tática dos Favoritos ao Título</h3>
+                    <p>Analisamos a estrutura tática e os principais destaques das equipes que chegam fortes no torneio.</p>
+                    <a href="#" class="btn-secondary">Ler Matéria</a>
+                </div>
             </article>
         </section>
 
-        <section id="noticias">
-            <h2>Últimas Notícias</h2>
-            <article class="card">
-                <h3>Mercado da Bola</h3>
-                <p>Veja as principais transferências do futebol internacional.</p>
-            </article>
-            <article class="card">
-                <h3>Análise Tática</h3>
-                <p>Como o novo esquema tático mudou o rendimento da equipe.</p>
-            </article>
+        <section id="ligas">
+            <h2>Principais Ligas</h2>
+            <div class="grid-ligas">
+                <div class="card-liga">
+                    <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=400" alt="Premier League">
+                    <h3>Premier League</h3>
+                    <p>A disputa acirrada pelo topo da tabela na Inglaterra.</p>
+                    <button class="btn-liga">Acompanhar</button>
+                </div>
+                <div class="card-liga">
+                    <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=400" alt="La Liga">
+                    <h3>La Liga</h3>
+                    <p>Os bastidores do futebol espanhol e a rivalidade do El Clásico.</p>
+                    <button class="btn-liga">Acompanhar</button>
+                </div>
+            </div>
         </section>
 
-        <section id="tabela">
-            <h2>Classificação Rápida</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Posição</th>
-                        <th>Clube</th>
-                        <th>Pontos</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1º</td>
-                        <td>Time A</td>
-                        <td>25</td>
-                    </tr>
-                    <tr>
-                        <td>2º</td>
-                        <td>Time B</td>
-                        <td>22</td>
-                    </tr>
-                </tbody>
-            </table>
+        <section id="transferencias">
+            <h2>Mercado de Transferências</h2>
+            <article class="card">
+                <div class="card-body">
+                    <h3>Últimas Especulações do Verão Europeu</h3>
+                    <p>Acompanhe os rumores e contratações confirmadas para a temporada.</p>
+                    <a href="#" class="btn-secondary">Ver Lista</a>
+                </div>
+            </article>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 Mundo do Futebol - Todos os direitos reservados.</p>
+        <p>&copy; 2026 EuroFut - Todos os direitos reservados.</p>
     </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>
+/* Variaveis de Cores para Temas */
+.dark-theme {
+    --bg-main: #0f172a;
+    --bg-card: #1e293b;
+    --text-main: #f8fafc;
+    --text-sub: #94a3b8;
+    --border-color: #334155;
+    --accent-color: #3b82f6;
+}
+
+.light-theme {
+    --bg-main: #f1f5f9;
+    --bg-card: #ffffff;
+    --text-main: #0f172a;
+    --text-sub: #475569;
+    --border-color: #e2e8f0;
+    --accent-color: #2563eb;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 body {
-    background-color: #f4f4f9;
-    color: #333;
+    background-color: var(--bg-main);
+    color: var(--text-main);
     line-height: 1.6;
 }
 
 header {
-    background-color: #1b4d3e; /* Verde futebol */
-    color: white;
-    padding: 1rem;
-    text-align: center;
+    background-color: var(--bg-card);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    border-bottom: 2px solid var(--border-color);
 }
 
-header nav ul {
+.logo span {
+    color: var(--accent-color);
+}
+
+nav ul {
+    display: flex;
     list-style: none;
-    margin-top: 10px;
+    gap: 20px;
 }
 
-header nav ul li {
-    display: inline;
-    margin: 0 15px;
-}
-
-header nav ul li a {
-    color: white;
+nav ul li a {
+    color: var(--text-sub);
     text-decoration: none;
+    font-weight: 600;
+}
+
+nav ul li a:hover {
+    color: var(--accent-color);
+}
+
+/* Botão Tema */
+.btn-theme {
+    background-color: var(--border-color);
+    color: var(--text-main);
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
     font-weight: bold;
 }
 
+/* Banner Hero */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=1200') center/cover;
+    text-align: center;
+    padding: 80px 20px;
+    color: white;
+}
+
+.btn-primary {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+/* Layout Conteúdo */
 main {
-    max-width: 800px;
-    margin: 20px auto;
+    max-width: 900px;
+    margin: 30px auto;
     padding: 0 20px;
 }
 
 section {
-    margin-bottom: 30px;
+    margin-bottom: 40px;
 }
 
 h2 {
-    color: #1b4d3e;
-    border-bottom: 2px solid #1b4d3e;
-    margin-bottom: 15px;
+    color: var(--accent-color);
+    margin-bottom: 20px;
 }
 
 .card {
-    background: white;
-    padding: 15px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    background-color: var(--bg-card);
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+    margin-bottom: 20px;
 }
 
-table {
+.card img {
     width: 100%;
-    border-collapse: collapse;
-    background: white;
+    height: 250px;
+    object-fit: cover;
 }
 
-th, td {
-    padding: 10px;
-    border: 1px solid #ddd;
-    text-align: center;
+.card-body {
+    padding: 20px;
 }
 
-th {
-    background-color: #1b4d3e;
+.card p {
+    color: var(--text-sub);
+    margin: 10px 0;
+}
+
+.badge {
+    background-color: var(--accent-color);
     color: white;
+    font-size: 0.75rem;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-weight: bold;
 }
 
-footer {
-    text-align: center;
-    padding: 15px;
-    background-color: #222;
-    color: white;
-    margin-top: 20px;
-}
+.btn-secondary {
+    display: inline-block;
+    background-color: transparent;
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-
